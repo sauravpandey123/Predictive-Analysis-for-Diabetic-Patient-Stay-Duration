@@ -1,4 +1,6 @@
 # Load the ggplot2 library
+#CITE: SOME CODE WERE PRODUCED FROM ChatGPT
+
 library(ggplot2)
 df = cdc
 
@@ -182,6 +184,7 @@ for (var in cont_vars) {
 }
 
 ######################### SHINY APP ###########################
+#CITE: HELP FROM ChatGPT
 
 # Load necessary libraries
 library(shiny)
