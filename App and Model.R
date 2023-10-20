@@ -1,6 +1,4 @@
 # Load the ggplot2 library
-#CITE: SOME CODE WERE PRODUCED FROM ChatGPT
-
 library(ggplot2)
 df = cdc
 
@@ -84,42 +82,6 @@ ggplot(df, aes(x=factor(number_diagnoses), y=time_in_hospital)) +
 
 #==== MODEL SELECTION ===============#
 
-#Continuous Variables:
-  # number_of_procedures
-  # number_of_emergencies
-  # number_of_diagnoses
-# Categorical Variables:
-  # race
-  # gender
-  # age_group
-  # medication_changes
-  # metformin
-  # repaglinide
-  # nateglinide
-  # chlorpropamide
-  # glimepiride
-  # acetohexamide
-  # glipizide
-  # glyburide
-  # tolbutamide
-  # pioglitazone
-  # rosiglitazone
-  # acarbose
-  # miglitol
-  # troglitazone
-  # tolazamide
-  # examide
-  # citoglipton
-  # insulin
-  # glyburide-metformin
-  # glipizide-metformin
-  # glimepiride-pioglitazone
-  # metformin-rosiglitazone
-  # metformin-pioglitazone
-  # change
-  # diabetesMed
-  # readmitted
-
 # Updated Categorical predictors
 cat_vars <- c("race", "gender", "age", "max_glu_serum",
               "A1Cresult", "metformin", "repaglinide", "nateglinide", "chlorpropamide",
@@ -160,19 +122,7 @@ backward_model <- step(lm(time_in_hospital ~ ., data = df[, c("time_in_hospital"
                        direction = "backward")
 
 summary(backward_model)
-# 
-# lm(formula = time_in_hospital ~ race + gender + age + max_glu_serum + 
-#      A1Cresult + metformin + repaglinide + glimepiride + acetohexamide + 
-#      glipizide + glyburide + pioglitazone + rosiglitazone + insulin + 
-#      change + diabetesMed + readmitted + num_lab_procedures + 
-#      num_procedures + num_medications + number_outpatient + number_emergency + 
-#      number_inpatient + number_diagnoses, data = df[, c("time_in_hospital", 
-#                                                         cat_vars, cont_vars)])
 
-# 
-# Residual standard error: 2.523 on 97995 degrees of freedom
-# Multiple R-squared:  0.2898,	Adjusted R-squared:  0.2894 
-# F-statistic: 701.5 on 57 and 97995 DF,  p-value: < 2.2e-16
 
 print (cat_vars)
 
@@ -184,7 +134,7 @@ for (var in cont_vars) {
 }
 
 ######################### SHINY APP ###########################
-#CITE: HELP FROM ChatGPT
+
 
 # Load necessary libraries
 library(shiny)
