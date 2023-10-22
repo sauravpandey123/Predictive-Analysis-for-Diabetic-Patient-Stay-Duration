@@ -15,7 +15,7 @@ Predicting the length of a patient's stay can help hospitals manage resources mo
 
 ## Dataset
 
-The dataset contains the following key attributes:
+Three of the key attributes are:
 
 - **Age**: Patient's age.
 - **Gender**: Patient's gender.
